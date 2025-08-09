@@ -8,6 +8,7 @@ import ServicesPage from './pages/ServicesPage';
 import TestimonialsPage from './pages/TestimonialsPage';
 import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
+import Gallerypage from './pages/GalleryPage';
 
 // Main app component with routing
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/gallery" element={<Gallerypage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
