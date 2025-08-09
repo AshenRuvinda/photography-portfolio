@@ -1,0 +1,23 @@
+[
+    {
+      "id": 1,
+      "title": "Sunset Wedding",
+      "category": "Weddings",
+      "image": "/assets/portfolio/wedding1.jpg",
+      "description": "A romantic sunset wedding shoot."
+    },
+    {
+      "id": 2,
+      "title": "Mountain Portrait",
+      "category": "Portraits",
+      "image": "/assets/portfolio/portrait1.jpg",
+      "description": "A dramatic portrait in the mountains."
+    },
+    {
+      "id": 3,
+      "title": "Cityscape",
+      "category": "Landscapes",
+      "image": "/assets/portfolio/landscape1.jpg",
+      "description": "Vibrant city lights at dusk."
+    }
+  ]

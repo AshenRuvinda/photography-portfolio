@@ -1,0 +1,16 @@
+[
+    {
+      "id": 1,
+      "name": "Jane Doe",
+      "photo": "/assets/testimonials/jane.jpg",
+      "rating": 5,
+      "quote": "Absolutely stunning photos! Captured our wedding perfectly."
+    },
+    {
+      "id": 2,
+      "name": "John Smith",
+      "photo": "/assets/testimonials/john.jpg",
+      "rating": 4,
+      "quote": "Professional and creative. Loved the portrait session!"
+    }
+  ]
