@@ -1,405 +1,299 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Camera, Award, Users, Aperture, Play, Eye, Clock, MapPin } from 'lucide-react';
+import { Camera, Heart, Award, ArrowRight, Eye, ChevronDown, CheckCircle2 } from 'lucide-react';
 
 function HomePage() {
-  const [siteData, setSiteData] = useState({
-    name: 'Alexander Sterling',
-    tagline: 'Fine Art & Portrait Photography',
-    heroImage: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-  });
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [scrollY, setScrollY] = useState(0);
-  const heroRef = useRef(null);
-  const statsRef = useRef(null);
-  const [statsVisible, setStatsVisible] = useState(false);
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setStatsVisible(true);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (statsRef.current) {
-      observer.observe(statsRef.current);
+  const services = [
+    {
+      title: 'Wedding Photography',
+      description: 'Timeless moments from your most precious day, documented with warmth and cinematic beauty.',
+      image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+      tag: 'Weddings',
+      href: '/portfolio'
+    },
+    {
+      title: 'Portrait & Lifestyle',
+      description: 'Authentic portraits capturing genuine emotion, natural light, and individual soul.',
+      image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
+      tag: 'Portraits',
+      href: '/portfolio'
+    },
+    {
+      title: 'Events & Celebrations',
+      description: 'Intimate gatherings, milestone birthdays, and exclusive corporate occasions captured seamlessly.',
+      image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
+      tag: 'Events',
+      href: '/services'
+    },
+    {
+      title: 'Brand & Commercial',
+      description: 'High-concept creative visuals designed to elevate luxury brands and modern artisans.',
+      image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80',
+      tag: 'Commercial',
+      href: '/services'
+    },
+    {
+      title: 'Villa & Real Estate',
+      description: 'Architectural perspectives highlighting luxury spaces, light transitions, and natural geometry.',
+      image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
+      tag: 'Architecture',
+      href: '/gallery'
+    },
+    {
+      title: 'Fine Art Prints',
+      description: 'Curated limited edition prints for interior collectors, homes, and private galleries.',
+      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
+      tag: 'Exhibition',
+      href: '/gallery'
     }
-
-    return () => observer.disconnect();
-  }, []);
-
-  const scrollToContent = () => {
-    window.scrollTo({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
-  };
-
-  const stats = [
-    { number: '500', label: 'Satisfied Clients', icon: Users },
-    { number: '2000', label: 'Captured Moments', icon: Camera },
-    { number: '50', label: 'Awards Received', icon: Award },
-    { number: '15', label: 'Years of Excellence', icon: Clock },
   ];
 
-  const parallaxTransform = `translateY(${scrollY * 0.3}px)`;
-
-  const mouseParallaxTransform = `translate(${(mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth : 1920) / 2) * 0.005}px, ${
-    (mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight : 1080) / 2) * 0.005
-  }px)`;
+  const featuredWorks = [
+    {
+      title: 'Serenade at Lake Como',
+      category: 'Destination Wedding',
+      image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      title: 'Golden Hour in Tuscany',
+      category: 'Elopement Story',
+      image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      title: 'Elegance in Monochromatic Light',
+      category: 'Fine Art Portrait',
+      image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80',
+    },
+    {
+      title: 'The Coastal Villa Residency',
+      category: 'Architectural Lifestyle',
+      image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+    }
+  ];
 
   return (
-    <div className="relative overflow-hidden bg-stone-50">
-      {/* Hero Section */}
-      <div
-        ref={heroRef}
-        className="relative h-screen flex items-center justify-center overflow-hidden"
-      >
-        {/* Background Image with Subtle Parallax */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
-          style={{
-            backgroundImage: `url(${siteData.heroImage})`,
-            transform: parallaxTransform,
-          }}
-        />
+    <div className="bg-[#F2EDE7] text-[#2E2219]">
+      {/* =========================================================
+         HERO SECTION (Hemal Perera Signature Hero)
+         ========================================================= */}
+      <section className="relative min-h-screen -mt-14 sm:-mt-16 lg:-mt-24 flex items-center justify-center overflow-hidden">
+        {/* Background Image with Warm Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?auto=format&fit=crop&w=2000&q=85"
+            alt="Photography Hero"
+            className="w-full h-full object-cover object-center filter brightness-[0.75] contrast-[1.05]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#221811]/60 via-[#221811]/45 to-[#221811]/75" />
+        </div>
 
-        {/* Elegant Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/40 to-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/20" />
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20 pb-16">
+          <p className="text-[#FFDBBB] text-[0.65rem] sm:text-xs font-medium tracking-[0.22em] sm:tracking-[0.25em] uppercase mb-4 animate-fadeInUp">
+            Premier Fine Art & Wedding Photography
+          </p>
+          <h1 className="heading-serif text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.15] mb-5 sm:mb-6 animate-fadeInUp">
+            Capturing Moments<br />
+            <span className="italic font-light text-[#FFDBBB]">That Last Forever</span>
+          </h1>
+          <p className="text-[#E7DDD3] text-sm sm:text-base lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-light px-2">
+            Professional photography that tells your unique story with elegance, genuine emotion, and timeless cinematic artistry.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center px-4">
+            <Link href="/portfolio" className="btn-gold w-full sm:w-auto text-xs py-3 px-7">
+              View Weddings
+            </Link>
+            <Link href="/contact" className="btn-outline-gold !text-white !border-[#FFDBBB] hover:!bg-[#FFDBBB] hover:!text-[#2E2219] w-full sm:w-auto text-xs py-3 px-7">
+              Book a Session
+            </Link>
+          </div>
+        </div>
 
-        {/* Subtle Floating Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {Array.from({ length: 12 }, (_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-amber-200/30 rounded-full animate-float"
-              style={{
-                left: `${15 + Math.random() * 70}%`,
-                top: `${10 + Math.random() * 80}%`,
-                animationDelay: `${Math.random() * 8}s`,
-                animationDuration: `${6 + Math.random() * 4}s`,
-              }}
-            />
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-75">
+          <span className="text-[0.65rem] text-[#FFDBBB] tracking-[0.25em] uppercase font-medium">Scroll</span>
+          <div className="w-[1px] h-10 bg-gradient-to-b from-[#FFDBBB] to-transparent animate-pulse" />
+        </div>
+      </section>
+
+      {/* =========================================================
+         WHAT WE DO / SERVICES GRID
+         ========================================================= */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <p className="text-[#997E67] text-xs tracking-[0.22em] uppercase font-semibold mb-3">
+            What We Do
+          </p>
+          <h2 className="heading-serif text-4xl lg:text-5xl font-bold text-[#2E2219] mb-4">
+            Our Photography Services
+          </h2>
+          <div className="gold-line" />
+          <p className="text-[#5E4D3E] text-base max-w-xl mx-auto">
+            From intimate ceremonies to grand editorial projects, every frame is crafted to perfection.
+          </p>
+        </div>
+
+        {/* Service Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              className="group bg-[#F8F2EB] border border-[#CCBEB1] overflow-hidden rounded-[2px] transition-all duration-500 hover:-translate-y-1.5 hover:shadow-xl hover:border-[#997E67] flex flex-col"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#E7DDD3]">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span className="absolute top-3 left-3 bg-[#F2EDE7]/90 backdrop-blur-sm text-[#2E2219] text-[0.65rem] uppercase tracking-[0.18em] px-2.5 py-1 font-semibold rounded-sm">
+                  {item.tag}
+                </span>
+              </div>
+              <div className="p-6 flex-grow flex flex-col justify-between">
+                <div>
+                  <h3 className="heading-serif text-xl font-bold text-[#2E2219] mb-2 group-hover:text-[#997E67] transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-[#5E4D3E] leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+                <div className="pt-5 mt-4 border-t border-[#CCBEB1]/40 flex items-center justify-between text-xs tracking-[0.15em] uppercase font-semibold text-[#997E67]">
+                  <span>Explore Series</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
+      </section>
 
-        {/* Hero Content */}
-        <div 
-          className="relative z-10 text-center text-white px-6 max-w-5xl" 
-          style={{ transform: mouseParallaxTransform }}
-        >
-          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-12 duration-1200">
-            {/* Professional Header */}
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px w-20 bg-gradient-to-r from-transparent via-amber-300 to-transparent" />
-              <div className="p-2 border border-amber-300/50 rounded-sm">
-                <Aperture className="w-6 h-6 text-amber-300" />
-              </div>
-              <span className="text-amber-300 font-light tracking-[0.3em] uppercase text-sm">
-                Fine Art Photography
-              </span>
-              <div className="p-2 border border-amber-300/50 rounded-sm">
-                <Eye className="w-6 h-6 text-amber-300" />
-              </div>
-              <div className="h-px w-20 bg-gradient-to-r from-amber-300 via-transparent to-transparent" />
+      {/* =========================================================
+         FEATURED WORKS BANNER
+         ========================================================= */}
+      <section className="bg-[#E7DDD3] border-y border-[#CCBEB1] py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
+            <div>
+              <p className="text-[#997E67] text-xs tracking-[0.22em] uppercase font-semibold mb-3">
+                Selected Portfolio
+              </p>
+              <h2 className="heading-serif text-4xl lg:text-5xl font-bold text-[#2E2219]">
+                Featured Visual Stories
+              </h2>
             </div>
+            <Link href="/portfolio" className="btn-gold text-xs py-2.5 px-6 self-start md:self-auto">
+              View All Works
+            </Link>
+          </div>
 
-            {/* Name and Title */}
-            <div className="space-y-4">
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-tight tracking-wide">
-                <span className="block opacity-0 animate-in fade-in slide-in-from-left duration-1200 delay-400">
-                  {siteData.name?.split(' ')[0] || 'Alexander'}
-                </span>
-                <span className="block font-thin text-amber-200 opacity-0 animate-in fade-in slide-in-from-right duration-1200 delay-700">
-                  {siteData.name?.split(' ').slice(1).join(' ') || 'Sterling'}
-                </span>
-              </h1>
-              
-              <div className="opacity-0 animate-in fade-in slide-in-from-bottom duration-1200 delay-1000">
-                <div className="h-px w-32 bg-gradient-to-r from-transparent via-white/60 to-transparent mx-auto mb-6" />
-                <p className="text-lg md:text-xl font-light tracking-wider text-stone-200 uppercase">
-                  {siteData.tagline || 'Fine Art & Portrait Photography'}
-                </p>
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-12
-              opacity-0 animate-in fade-in slide-in-from-bottom duration-1200 delay-1300">
-              
-              <Link 
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {featuredWorks.map((work, idx) => (
+              <Link
+                key={idx}
                 href="/portfolio"
-                className="group relative px-10 py-4 border border-white/30 
-                text-white font-light tracking-wider transition-all duration-500 
-                hover:border-amber-300/80 hover:bg-white/5 backdrop-blur-sm
-                focus:outline-none focus:ring-2 focus:ring-amber-300/50"
+                className="group relative bg-[#F8F2EB] border border-[#CCBEB1] overflow-hidden rounded-[2px] transition-all duration-500 hover:shadow-xl hover:border-[#997E67]"
               >
-                <span className="relative z-10 flex items-center gap-3 uppercase text-sm">
-                  <Camera className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                  View Portfolio
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-300/0 via-amber-300/10 to-amber-300/0 
-                  transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <img
+                    src={work.image}
+                    alt={work.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2E2219]/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <span className="text-[0.7rem] uppercase tracking-[0.2em] text-[#FFDBBB] font-medium block mb-1">
+                      {work.category}
+                    </span>
+                    <h3 className="heading-serif text-2xl font-bold leading-snug text-white group-hover:text-[#FFDBBB] transition-colors">
+                      {work.title}
+                    </h3>
+                  </div>
+                </div>
               </Link>
-
-              <button className="group flex items-center gap-4 px-8 py-4 text-white/80 
-                hover:text-white font-light tracking-wider transition-all duration-300
-                focus:outline-none focus:text-amber-300">
-                <div className="p-2 border border-white/20 rounded-full group-hover:border-white/40 
-                  transition-colors duration-300">
-                  <Play className="w-4 h-4" />
-                </div>
-                <span className="uppercase text-sm">Studio Tour</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Elegant Scroll Indicator */}
-        <button
-          onClick={scrollToContent}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 text-white/60 hover:text-amber-300 
-            transition-all duration-500 hover:scale-110 group focus:outline-none"
-        >
-          <div className="flex flex-col items-center gap-3">
-            <div className="h-16 w-px bg-gradient-to-b from-transparent via-white/40 to-transparent" />
-            <span className="text-xs font-light tracking-[0.2em] uppercase">Explore</span>
-            <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
-          </div>
-        </button>
-
-        {/* Decorative Corner Elements */}
-        <div className="absolute top-16 left-16 w-16 h-16">
-          <div className="w-full h-px bg-white/20" />
-          <div className="w-px h-full bg-white/20" />
-        </div>
-        <div className="absolute top-16 right-16 w-16 h-16">
-          <div className="w-full h-px bg-white/20 ml-auto" />
-          <div className="w-px h-full bg-white/20 ml-auto" />
-        </div>
-        <div className="absolute bottom-16 left-16 w-16 h-16">
-          <div className="w-px h-full bg-white/20" />
-          <div className="w-full h-px bg-white/20 mt-auto" />
-        </div>
-        <div className="absolute bottom-16 right-16 w-16 h-16">
-          <div className="w-px h-full bg-white/20 ml-auto" />
-          <div className="w-full h-px bg-white/20 mt-auto" />
-        </div>
-      </div>
-
-      {/* Stats Section with Classical Design */}
-      <div
-        ref={statsRef}
-        className="relative py-24 bg-gradient-to-br from-stone-100 to-stone-200 overflow-hidden"
-      >
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div 
-            className="absolute inset-0" 
-            style={{
-              backgroundImage: 'radial-gradient(circle at 50% 50%, #8B4513 1px, transparent 1px)',
-              backgroundSize: '60px 60px'
-            }} 
-          />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-20">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px w-16 bg-gradient-to-r from-transparent to-stone-400" />
-              <MapPin className="w-5 h-5 text-stone-500" />
-              <span className="text-stone-500 font-light tracking-[0.2em] uppercase text-xs">
-                Based in New York
-              </span>
-              <div className="h-px w-16 bg-gradient-to-l from-transparent to-stone-400" />
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light text-stone-800 mb-6 tracking-wide">
-              Excellence in Every Frame
-            </h2>
-            <p className="text-lg md:text-xl text-stone-600 max-w-3xl mx-auto font-light leading-relaxed">
-              With over a decade of experience in fine art and portrait photography, 
-              I bring technical mastery and artistic vision to every project.
-            </p>
-          </div>
-
-          {/* Statistics Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 max-w-5xl mx-auto">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className={`text-center group transition-all duration-1000 ${
-                  statsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
-                }`}
-                style={{ transitionDelay: `${index * 150}ms` }}
-              >
-                <div className="relative inline-flex items-center justify-center w-24 h-24 mb-6 
-                  border border-stone-300 group-hover:border-amber-300/60 rounded-sm
-                  transition-all duration-500 group-hover:scale-105 bg-white/50 backdrop-blur-sm">
-                  <stat.icon className="w-8 h-8 text-stone-600 group-hover:text-amber-600 
-                    transition-colors duration-300" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-amber-50/0 to-amber-50/50 
-                    opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-sm" />
-                </div>
-                
-                <h3 className="text-3xl md:text-4xl font-light text-stone-800 mb-3 
-                  group-hover:text-amber-700 transition-colors duration-300">
-                  <CountUp end={parseInt(stat.number)} visible={statsVisible} />
-                  <span className="text-2xl">+</span>
-                </h3>
-                
-                <p className="text-stone-600 font-light tracking-wide uppercase text-sm">
-                  {stat.label}
-                </p>
-                
-                <div className="mt-4 h-px w-12 bg-gradient-to-r from-transparent via-stone-300 
-                  to-transparent mx-auto group-hover:via-amber-300 transition-colors duration-300" />
-              </div>
             ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Call to Action Section */}
-      <div className="relative py-24 bg-gradient-to-br from-stone-800 to-stone-900 overflow-hidden">
-        {/* Background Texture */}
-        <div className="absolute inset-0 opacity-5">
-          <div 
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(circle at center, rgba(245,245,220,0.3) 1px, transparent 1px)`,
-              backgroundSize: '40px 40px'
-            }}
-          />
-        </div>
-
-        <div className="container mx-auto px-6 relative z-10 text-center text-stone-100">
-          <div className="max-w-4xl mx-auto">
-            {/* Section Header */}
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px w-20 bg-gradient-to-r from-transparent via-amber-300/60 to-transparent" />
-              <Aperture className="w-6 h-6 text-amber-300" />
-              <div className="h-px w-20 bg-gradient-to-r from-amber-300/60 via-transparent to-transparent" />
+      {/* =========================================================
+         PHILOSOPHY / ABOUT TEASER
+         ========================================================= */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative">
+            <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-[2px] border border-[#CCBEB1] shadow-xl">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
+                alt="Alexander Sterling Photographer"
+                className="w-full h-full object-cover"
+              />
             </div>
-            
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light mb-8 tracking-wide">
-              Let's Create Something
-              <span className="block text-amber-200 font-thin">Extraordinary</span>
-            </h2>
-            
-            <p className="text-lg md:text-xl text-stone-300 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-              Whether it's a portrait session, wedding, or fine art project, 
-              I'm here to bring your vision to life with timeless elegance.
+            {/* Elegant Accent Box */}
+            <div className="absolute -bottom-6 -right-6 w-64 h-64 border-2 border-[#997E67]/40 -z-0 rounded-[2px] hidden sm:block" />
+          </div>
+
+          <div className="space-y-6">
+            <p className="text-[#997E67] text-xs tracking-[0.22em] uppercase font-semibold">
+              Behind The Lens
             </p>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link 
-                href="/contact"
-                className="group relative px-12 py-5 bg-amber-300 hover:bg-amber-400 
-                text-stone-900 font-medium tracking-wider transition-all duration-300 
-                hover:shadow-2xl hover:shadow-amber-300/20 focus:outline-none focus:ring-2 
-                focus:ring-amber-300 hover:scale-105"
-              >
-                <span className="relative z-10 flex items-center gap-3 uppercase text-sm">
-                  Book a Session
-                  <Camera className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
-                </span>
-              </Link>
-              
-              <Link 
-                href="/about"
-                className="group flex items-center gap-4 px-8 py-5 border border-stone-400/30 
-                hover:border-amber-300/60 text-stone-200 hover:text-white font-light 
-                tracking-wider transition-all duration-300 hover:bg-white/5 backdrop-blur-sm
-                focus:outline-none focus:ring-2 focus:ring-stone-400/50"
-              >
-                <Award className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                <span className="uppercase text-sm">About Me</span>
+            <h2 className="heading-serif text-4xl lg:text-5xl font-bold text-[#2E2219] leading-tight">
+              Crafting Timeless Heirlooms Through Thoughtful Artistry
+            </h2>
+            <div className="gold-line-left" />
+            <p className="text-[#5E4D3E] text-base leading-relaxed">
+              With over 15 years capturing weddings, editorial portraits, and authentic human connections across the globe, my approach blends documentarian honesty with high-fashion sophistication.
+            </p>
+            <div className="space-y-3 pt-2">
+              <div className="flex items-center gap-3 text-sm text-[#2E2219]">
+                <CheckCircle2 className="w-5 h-5 text-[#997E67]" />
+                <span>Over 500+ couples & families photographed worldwide</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-[#2E2219]">
+                <CheckCircle2 className="w-5 h-5 text-[#997E67]" />
+                <span>Published in international wedding & editorial publications</span>
+              </div>
+              <div className="flex items-center gap-3 text-sm text-[#2E2219]">
+                <CheckCircle2 className="w-5 h-5 text-[#997E67]" />
+                <span>Natural light specialists with bespoke heirloom retouching</span>
+              </div>
+            </div>
+            <div className="pt-4">
+              <Link href="/about" className="btn-gold">
+                Learn More About Alexander
               </Link>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <style jsx>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); opacity: 0.3; }
-          25% { transform: translateY(-8px) rotate(90deg) scale(1.1); opacity: 0.6; }
-          50% { transform: translateY(0px) rotate(180deg) scale(1); opacity: 0.3; }
-          75% { transform: translateY(4px) rotate(270deg) scale(0.9); opacity: 0.6; }
-        }
-        .animate-float {
-          animation: float 8s ease-in-out infinite;
-        }
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-        }
-      `}</style>
+      {/* =========================================================
+         CALL TO ACTION SECTION
+         ========================================================= */}
+      <section className="bg-[#2E2219] text-[#F2EDE7] py-20 px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <p className="text-[#FFDBBB] text-xs uppercase tracking-[0.25em] font-medium">
+            Begin Your Story
+          </p>
+          <h2 className="heading-serif text-4xl lg:text-5xl font-bold text-white">
+            Let's Create Something Unforgettable
+          </h2>
+          <p className="text-[#CCBEB1] text-base lg:text-lg leading-relaxed">
+            Reserve your wedding date, portrait session, or commercial commission today. Limited dates available per season.
+          </p>
+          <div className="pt-4">
+            <Link href="/contact" className="btn-gold !bg-[#997E67] hover:!bg-[#664930] !text-white text-sm py-3.5 px-8">
+              Inquire Availability
+            </Link>
+          </div>
+        </div>
+      </section>
     </div>
   );
-}
-
-// Refined CountUp component
-function CountUp({ end, visible, duration = 2500 }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!visible) return;
-
-    let startTime;
-    let animationFrame;
-    
-    const animate = (currentTime) => {
-      if (!startTime) startTime = currentTime;
-      const progress = Math.min((currentTime - startTime) / duration, 1);
-
-      // Easing function for smoother animation
-      const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      
-      setCount(Math.floor(end * easeOutQuart));
-      
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-    
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
-  }, [visible, end, duration]);
-
-  return <span>{count}</span>;
 }
 
 export default HomePage;
