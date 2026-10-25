@@ -1,14 +1,17 @@
+'use client';
+
 import { useState, useEffect } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X, Aperture, User, Camera, Briefcase, Star, MessageCircle, Home, Award } from 'lucide-react';
 
 function Navbar() {
-  const [siteData, setSiteData] = useState({
+  const [siteData] = useState({
     name: 'Alexander Sterling'
   });
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +23,7 @@ function Navbar() {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   const navItems = [
     { to: '/', label: 'Home', icon: Home },
@@ -46,6 +49,7 @@ function Navbar() {
             {/* Logo */}
             <Link 
               to="/" 
+              href="/"
               className={`group flex items-center gap-3 transition-all duration-500 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-300/50 rounded-sm ${
                 scrolled ? 'text-stone-100' : 'text-white drop-shadow-lg'
               }`}
@@ -69,6 +73,7 @@ function Navbar() {
 
             {/* Mobile menu button */}
             <button
+              aria-label="Toggle navigation menu"
               className={`md:hidden p-2 border transition-all duration-500 rounded-sm hover:scale-110 focus:outline-none focus:ring-2 focus:ring-amber-300/50 ${
                 scrolled 
                   ? 'text-stone-100 border-amber-300/60 hover:border-amber-300 hover:bg-amber-300/20' 
@@ -89,52 +94,51 @@ function Navbar() {
             {/* Desktop navigation */}
             <div className="hidden md:flex">
               <ul className="flex items-center gap-1">
-                {navItems.map((item, index) => (
-                  <li key={item.to} className="relative">
-                    <NavLink
-                      to={item.to}
-                      className={({ isActive }) => `
-                        group relative flex items-center gap-2 px-3 py-2 transition-all duration-400 
-                        focus:outline-none focus:ring-2 focus:ring-amber-300/50 rounded-sm
-                        ${isActive 
-                          ? scrolled 
-                            ? 'text-amber-300 bg-amber-300/15 backdrop-blur-sm border-b-2 border-amber-300' 
-                            : 'text-amber-300 bg-amber-300/20 backdrop-blur-sm border-b-2 border-amber-300'
-                          : scrolled 
-                            ? 'text-stone-200 hover:text-amber-300 hover:bg-amber-300/10' 
-                            : 'text-stone-100/90 hover:text-amber-300 hover:bg-amber-300/15'
-                        }
-                      `}
-                      style={{ 
-                        animationDelay: `${index * 0.1}s`,
-                        transform: `translateY(${scrolled ? 0 : '2px'})`
-                      }}
-                    >
-                      {({ isActive }) => (
-                        <>
-                          <item.icon className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                          <span className="font-light tracking-wide text-sm uppercase">
-                            {item.label}
-                          </span>
-                          
-                          {/* Elegant underline animation */}
-                          <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-px bg-gradient-to-r 
-                            transition-all duration-500 ${
-                              isActive 
-                                ? 'w-full from-amber-300 via-amber-400 to-amber-300' 
-                                : 'w-0 group-hover:w-3/4 from-amber-300/70 via-amber-400/70 to-amber-300/70'
-                            }`} 
-                          />
-                          
-                          {/* Subtle background gradient */}
-                          <div className={`absolute inset-0 bg-gradient-to-r from-amber-300/0 via-amber-300/15 to-amber-300/0 
-                            rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`} 
-                          />
-                        </>
-                      )}
-                    </NavLink>
-                  </li>
-                ))}
+                {navItems.map((item, index) => {
+                  const isActive = pathname === item.to;
+                  return (
+                    <li key={item.to} className="relative">
+                      <Link
+                        href={item.to}
+                        className={`
+                          group relative flex items-center gap-2 px-3 py-2 transition-all duration-400 
+                          focus:outline-none focus:ring-2 focus:ring-amber-300/50 rounded-sm
+                          ${isActive 
+                            ? scrolled 
+                              ? 'text-amber-300 bg-amber-300/15 backdrop-blur-sm border-b-2 border-amber-300' 
+                              : 'text-amber-300 bg-amber-300/20 backdrop-blur-sm border-b-2 border-amber-300'
+                            : scrolled 
+                              ? 'text-stone-200 hover:text-amber-300 hover:bg-amber-300/10' 
+                              : 'text-stone-100/90 hover:text-amber-300 hover:bg-amber-300/15'
+                          }
+                        `}
+                        style={{ 
+                          animationDelay: `${index * 0.1}s`,
+                          transform: `translateY(${scrolled ? 0 : '2px'})`
+                        }}
+                      >
+                        <item.icon className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                        <span className="font-light tracking-wide text-sm uppercase">
+                          {item.label}
+                        </span>
+                        
+                        {/* Elegant underline animation */}
+                        <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 h-px bg-gradient-to-r 
+                          transition-all duration-500 ${
+                            isActive 
+                              ? 'w-full from-amber-300 via-amber-400 to-amber-300' 
+                              : 'w-0 group-hover:w-3/4 from-amber-300/70 via-amber-400/70 to-amber-300/70'
+                          }`} 
+                        />
+                        
+                        {/* Subtle background gradient */}
+                        <div className={`absolute inset-0 bg-gradient-to-r from-amber-300/0 via-amber-300/15 to-amber-300/0 
+                          rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`} 
+                        />
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
@@ -169,6 +173,7 @@ function Navbar() {
               </div>
             </div>
             <button
+              aria-label="Close navigation menu"
               onClick={() => setIsOpen(false)}
               className="p-2 text-stone-400 hover:text-amber-300 hover:bg-amber-300/20 rounded-sm transition-all duration-300"
             >
@@ -179,48 +184,47 @@ function Navbar() {
           {/* Mobile menu items */}
           <div className="p-6">
             <ul className="space-y-2">
-              {navItems.map((item, index) => (
-                <li key={item.to}>
-                  <NavLink
-                    to={item.to}
-                    className={({ isActive }) => `
-                      group flex items-center gap-4 px-6 py-4 transition-all duration-400 rounded-sm
-                      border-l-4 hover:translate-x-2 focus:outline-none focus:ring-2 focus:ring-amber-300/50
-                      ${isActive 
-                        ? 'text-amber-300 bg-amber-300/15 border-amber-300 shadow-sm' 
-                        : 'text-stone-200 border-transparent hover:text-amber-300 hover:bg-amber-300/10 hover:border-amber-300/60'
-                      }
-                    `}
-                    style={{ 
-                      animationDelay: `${index * 0.1}s`,
-                      animation: isOpen ? `slideInRight 0.4s ease-out forwards` : 'none',
-                      opacity: isOpen ? 1 : 0
-                    }}
-                  >
-                    {({ isActive }) => (
-                      <>
-                        <div className={`p-2 rounded-sm transition-all duration-300 ${
+              {navItems.map((item, index) => {
+                const isActive = pathname === item.to;
+                return (
+                  <li key={item.to}>
+                    <Link
+                      href={item.to}
+                      onClick={() => setIsOpen(false)}
+                      className={`
+                        group flex items-center gap-4 px-6 py-4 transition-all duration-400 rounded-sm
+                        border-l-4 hover:translate-x-2 focus:outline-none focus:ring-2 focus:ring-amber-300/50
+                        ${isActive 
+                          ? 'text-amber-300 bg-amber-300/15 border-amber-300 shadow-sm' 
+                          : 'text-stone-200 border-transparent hover:text-amber-300 hover:bg-amber-300/10 hover:border-amber-300/60'
+                        }
+                      `}
+                      style={{ 
+                        animationDelay: `${index * 0.1}s`,
+                        opacity: isOpen ? 1 : 0
+                      }}
+                    >
+                      <div className={`p-2 rounded-sm transition-all duration-300 ${
+                        isActive 
+                          ? 'bg-amber-300/25 text-amber-300' 
+                          : 'bg-stone-700/60 text-stone-300 group-hover:bg-amber-300/20 group-hover:text-amber-300'
+                      }`}>
+                        <item.icon className="w-4 h-4" />
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="font-light tracking-wide">
+                          {item.label}
+                        </span>
+                        <div className={`h-px bg-gradient-to-r transition-all duration-500 ${
                           isActive 
-                            ? 'bg-amber-300/25 text-amber-300' 
-                            : 'bg-stone-700/60 text-stone-300 group-hover:bg-amber-300/20 group-hover:text-amber-300'
-                        }`}>
-                          <item.icon className="w-4 h-4" />
-                        </div>
-                        <div className="flex flex-col">
-                          <span className="font-light tracking-wide">
-                            {item.label}
-                          </span>
-                          <div className={`h-px bg-gradient-to-r transition-all duration-500 ${
-                            isActive 
-                              ? 'w-full from-amber-300 to-transparent mt-1' 
-                              : 'w-0 group-hover:w-1/2 from-amber-300 to-transparent mt-1'
-                          }`} />
-                        </div>
-                      </>
-                    )}
-                  </NavLink>
-                </li>
-              ))}
+                            ? 'w-full from-amber-300 to-transparent mt-1' 
+                            : 'w-0 group-hover:w-1/2 from-amber-300 to-transparent mt-1'
+                        }`} />
+                      </div>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
 
             {/* Mobile menu footer */}
@@ -239,23 +243,6 @@ function Navbar() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-        
-        .container {
-          max-width: 1200px;
-        }
-      `}</style>
     </>
   );
 }

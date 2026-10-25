@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { Camera, Aperture, Send } from 'lucide-react';
 import ContactForm from '../components/forms/ContactForm';

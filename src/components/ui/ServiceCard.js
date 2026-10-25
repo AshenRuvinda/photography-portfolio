@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useRef, useEffect } from 'react';
 import { ArrowRight, Check, Star, Clock, Users, Camera } from 'lucide-react';
 

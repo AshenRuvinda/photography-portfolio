@@ -1,4 +1,7 @@
-import { useEffect, useState } from 'react';
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
 import { 
   Aperture, 
   Mail, 
@@ -38,10 +41,10 @@ function Footer() {
   ];
 
   const services = [
-    { label: 'Portrait Sessions', href: '/services/portraits' },
-    { label: 'Wedding Photography', href: '/services/weddings' },
-    { label: 'Fine Art Prints', href: '/services/prints' },
-    { label: 'Commercial Work', href: '/services/commercial' }
+    { label: 'Portrait Sessions', href: '/services' },
+    { label: 'Wedding Photography', href: '/services' },
+    { label: 'Fine Art Prints', href: '/services' },
+    { label: 'Commercial Work', href: '/services' }
   ];
 
   const socialLinks = [
@@ -118,7 +121,7 @@ function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href={link.href}
                     className="group flex items-center gap-2 text-stone-300 hover:text-amber-300 
                       transition-all duration-300 hover:translate-x-1"
@@ -126,7 +129,7 @@ function Footer() {
                     <div className="w-1 h-1 bg-stone-500 rounded-full group-hover:bg-amber-300 
                       transition-colors duration-300" />
                     <span className="font-light tracking-wide">{link.label}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -141,7 +144,7 @@ function Footer() {
             <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a
+                  <Link
                     href={service.href}
                     className="group flex items-center gap-2 text-stone-300 hover:text-amber-300 
                       transition-all duration-300 hover:translate-x-1"
@@ -149,7 +152,7 @@ function Footer() {
                     <Camera className="w-3 h-3 text-stone-500 group-hover:text-amber-300 
                       transition-colors duration-300" />
                     <span className="font-light tracking-wide">{service.label}</span>
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -197,6 +200,8 @@ function Footer() {
                   <a
                     key={index}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`group p-3 border border-stone-700 hover:border-amber-300/50 rounded-sm 
                       transition-all duration-300 hover:scale-110 hover:bg-amber-50/5 ${social.color}`}
                     aria-label={social.name}
@@ -231,18 +236,12 @@ function Footer() {
 
           {/* Additional Links */}
           <div className="flex items-center gap-6 text-stone-400">
-            <a 
-              href="/privacy" 
+            <Link 
+              href="/contact" 
               className="text-sm font-light tracking-wide hover:text-amber-300 transition-colors duration-300"
             >
-              Privacy Policy
-            </a>
-            <a 
-              href="/terms" 
-              className="text-sm font-light tracking-wide hover:text-amber-300 transition-colors duration-300"
-            >
-              Terms of Service
-            </a>
+              Get in Touch
+            </Link>
           </div>
 
           {/* Made with love */}

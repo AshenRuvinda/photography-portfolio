@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState, useRef } from 'react';
 import { Camera, Award, Users, Clock, Aperture, Eye, Heart, Star, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
 

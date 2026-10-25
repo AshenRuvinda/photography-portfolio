@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import { X, Download, Share2, Heart, ChevronLeft, ChevronRight, ZoomIn, ZoomOut } from 'lucide-react';
 

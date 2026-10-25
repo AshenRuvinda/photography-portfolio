@@ -1,4 +1,7 @@
+'use client';
+
 import { useEffect, useState, useRef } from 'react';
+import Link from 'next/link';
 import { ChevronDown, Camera, Award, Users, Aperture, Play, Eye, Clock, MapPin } from 'lucide-react';
 
 function HomePage() {
@@ -148,17 +151,20 @@ function HomePage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center pt-12
               opacity-0 animate-in fade-in slide-in-from-bottom duration-1200 delay-1300">
               
-              <button className="group relative px-10 py-4 border border-white/30 
+              <Link 
+                href="/portfolio"
+                className="group relative px-10 py-4 border border-white/30 
                 text-white font-light tracking-wider transition-all duration-500 
                 hover:border-amber-300/80 hover:bg-white/5 backdrop-blur-sm
-                focus:outline-none focus:ring-2 focus:ring-amber-300/50">
+                focus:outline-none focus:ring-2 focus:ring-amber-300/50"
+              >
                 <span className="relative z-10 flex items-center gap-3 uppercase text-sm">
                   <Camera className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
                   View Portfolio
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-300/0 via-amber-300/10 to-amber-300/0 
                   transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
-              </button>
+              </Link>
 
               <button className="group flex items-center gap-4 px-8 py-4 text-white/80 
                 hover:text-white font-light tracking-wider transition-all duration-300
@@ -313,23 +319,29 @@ function HomePage() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <button className="group relative px-12 py-5 bg-amber-300 hover:bg-amber-400 
+              <Link 
+                href="/contact"
+                className="group relative px-12 py-5 bg-amber-300 hover:bg-amber-400 
                 text-stone-900 font-medium tracking-wider transition-all duration-300 
                 hover:shadow-2xl hover:shadow-amber-300/20 focus:outline-none focus:ring-2 
-                focus:ring-amber-300 hover:scale-105">
+                focus:ring-amber-300 hover:scale-105"
+              >
                 <span className="relative z-10 flex items-center gap-3 uppercase text-sm">
                   Book a Session
                   <Camera className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300" />
                 </span>
-              </button>
+              </Link>
               
-              <button className="group flex items-center gap-4 px-8 py-5 border border-stone-400/30 
+              <Link 
+                href="/about"
+                className="group flex items-center gap-4 px-8 py-5 border border-stone-400/30 
                 hover:border-amber-300/60 text-stone-200 hover:text-white font-light 
                 tracking-wider transition-all duration-300 hover:bg-white/5 backdrop-blur-sm
-                focus:outline-none focus:ring-2 focus:ring-stone-400/50">
+                focus:outline-none focus:ring-2 focus:ring-stone-400/50"
+              >
                 <Award className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                <span className="uppercase text-sm">View Awards</span>
-              </button>
+                <span className="uppercase text-sm">About Me</span>
+              </Link>
             </div>
           </div>
         </div>

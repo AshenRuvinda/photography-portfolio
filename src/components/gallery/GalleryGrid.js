@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useRef, useEffect } from 'react';
 import { Eye, Heart, Share2, ZoomIn, Camera } from 'lucide-react';
 import Lightbox from './Lightbox';

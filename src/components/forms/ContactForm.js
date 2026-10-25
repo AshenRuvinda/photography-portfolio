@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useRef, useEffect } from 'react';
 import { Send, User, Mail, MessageSquare, CheckCircle, AlertCircle, MapPin, Phone, Clock, Camera, Award, Aperture } from 'lucide-react';
 
