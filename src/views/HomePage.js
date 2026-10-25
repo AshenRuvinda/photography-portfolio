@@ -82,7 +82,7 @@ function HomePage() {
         {/* Background Image with Warm Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?auto=format&fit=crop&w=2000&q=85"
+            src="https://images.unsplash.com/photo-1580757468214-c73f7062a5cb?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D"
             alt="Photography Hero"
             className="w-full h-full object-cover object-center filter brightness-[0.75] contrast-[1.05]"
           />
