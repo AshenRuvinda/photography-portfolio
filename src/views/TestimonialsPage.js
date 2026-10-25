@@ -8,33 +8,33 @@ function TestimonialsPage() {
   const testimonials = [
     {
       id: 1,
-      quote: "Working with Alexander was the greatest investment of our entire wedding. He preserved emotions that we didn't even realize were happening, and our gallery looks like a luxury editorial magazine.",
-      author: "Eleanor & James Vance",
-      event: "Lake Como Villa Wedding",
+      quote: "Working with Kasun was the best decision we made for our wedding. He preserved every sacred nuance of our Poruwa ceremony with such elegance, and our gallery looks like a luxury editorial magazine.",
+      author: "Kavindi & Dinuka Jayawardena",
+      event: "Poruwa Ceremony, Cinnamon Grand Colombo",
       date: "September 2024",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
     },
     {
       id: 2,
-      quote: "Alexander has an uncanny gift for making you forget the camera exists. My partner and I were completely at ease, and the photographs feel deeply intimate, genuine, and timeless.",
-      author: "Sophia Laurent",
-      event: "Editorial Portrait Session, Paris",
+      quote: "Kasun has an uncanny gift for making you forget the camera exists. During our pre-shoot in Galle Fort, we were completely relaxed, and the photos feel deeply intimate, genuine, and timeless.",
+      author: "Sachini & Roshan Silva",
+      event: "Destination Pre-Shoot, Galle Fort",
       date: "July 2024",
       image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80"
     },
     {
       id: 3,
-      quote: "From our first consultation to the final heirloom gallery delivery, Alexander's dedication and artistic eye were extraordinary. Our families still rave about the photographs.",
-      author: "Marcus & Victoria Sterling",
-      event: "Destination Elopement, Swiss Alps",
+      quote: "From our first consultation to the final heirloom gallery delivery, Kasun's dedication and artistic eye were extraordinary. Our parents and family still rave about how respectful and attentive he was.",
+      author: "Dulani & Malinda Wickramasinghe",
+      event: "Traditional Kandyan Wedding, Kandy",
       date: "May 2024",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
     },
     {
       id: 4,
-      quote: "Every single photograph captures the light and atmosphere in such a poetic way. Truly an artist of the highest caliber.",
-      author: "Claire & David Chen",
-      event: "SoHo Loft Wedding, New York",
+      quote: "Every single photograph captures the light and atmosphere of the southern coast in such a poetic way. Truly an artist of the highest caliber in Sri Lanka.",
+      author: "Hiruni & Chamath Fernando",
+      event: "Coastal Sunset Wedding, Bentota",
       date: "November 2023",
       image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80"
     }

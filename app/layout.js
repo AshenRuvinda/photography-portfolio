@@ -5,13 +5,13 @@ import PageTransition from '@/components/layout/PageTransition';
 import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp';
 
 export const metadata = {
-  title: 'Alexander Sterling | Fine Art & Portrait Photography',
-  description: 'Excellence in fine art and portrait photography. Capturing timeless elegance and genuine human emotion.',
-  keywords: ['photography', 'fine art', 'portraits', 'weddings', 'Alexander Sterling', 'portfolio'],
-  authors: [{ name: 'Alexander Sterling' }],
+  title: 'Kasun Senanayake | Fine Art & Wedding Photography Sri Lanka',
+  description: 'Premier fine art wedding and portrait photography in Sri Lanka by Kasun Senanayake. Capturing timeless Poruwa ceremonies, church weddings, and destination celebrations.',
+  keywords: ['photography', 'wedding photography sri lanka', 'poruwa ceremony', 'colombo photographer', 'galle destination wedding', 'Kasun Senanayake', 'portfolio'],
+  authors: [{ name: 'Kasun Senanayake' }],
   openGraph: {
-    title: 'Alexander Sterling | Fine Art & Portrait Photography',
-    description: 'Excellence in fine art and portrait photography.',
+    title: 'Kasun Senanayake | Fine Art & Wedding Photography Sri Lanka',
+    description: 'Premier fine art wedding and portrait photography in Sri Lanka.',
     type: 'website',
   },
 };
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
           </PageTransition>
         </main>
         <Footer />
-        <FloatingWhatsApp phoneNumber="+15551234567" />
+        <FloatingWhatsApp phoneNumber="+94771234567" />
       </body>
     </html>
   );

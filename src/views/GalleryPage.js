@@ -13,66 +13,66 @@ function GalleryPage() {
   const images = [
     {
       id: 1,
-      title: 'Embrace in the Olive Groves',
+      title: 'Embrace in the Hill Country Tea Fields',
       category: 'Weddings',
       url: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85',
-      location: 'Crete, Greece'
+      location: 'Nuwara Eliya, Sri Lanka'
     },
     {
       id: 2,
-      title: 'Golden Hour Silhouette',
+      title: 'Golden Hour at Galle Fort Ramparts',
       category: 'Weddings',
       url: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=85',
-      location: 'Lake Como, Italy'
+      location: 'Galle Fort, Sri Lanka'
     },
     {
       id: 3,
-      title: 'High-Fashion Portraiture',
+      title: 'Contemporary Kandyan Bridal Portrait',
       category: 'Portraits',
       url: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=85',
-      location: 'New York, USA'
+      location: 'Colombo, Sri Lanka'
     },
     {
       id: 4,
-      title: 'Alpine Elopement Exchange',
+      title: 'Bentota Oceanfront Ceremony',
       category: 'Weddings',
       url: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85',
-      location: 'Zermatt, Switzerland'
+      location: 'Bentota, Sri Lanka'
     },
     {
       id: 5,
-      title: 'Warm Candlelit Gala Dinner',
+      title: 'Warm Candlelit Grand Reception',
       category: 'Events',
       url: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=85',
-      location: 'Florence, Italy'
+      location: 'Cinnamon Grand, Colombo'
     },
     {
       id: 6,
-      title: 'Serene Coastal Villa',
+      title: 'Bawa Style Coastal Villa',
       category: 'Architecture',
       url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85',
-      location: 'Mallorca, Spain'
+      location: 'Mirissa, Sri Lanka'
     },
     {
       id: 7,
-      title: 'Intimate Bridal Preparation',
+      title: 'Intimate Bridal Preparation with Osariya',
       category: 'Weddings',
       url: 'https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1200&q=85',
-      location: 'Santorini, Greece'
+      location: 'Kandy, Sri Lanka'
     },
     {
       id: 8,
-      title: 'Editorial Studio Profile',
+      title: 'Editorial Natural Light Profile',
       category: 'Portraits',
       url: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=1200&q=85',
-      location: 'London, UK'
+      location: 'Colombo 07, Sri Lanka'
     },
     {
       id: 9,
-      title: 'Sunlit Veranda Architecture',
+      title: 'Tropical Veranda & Reflection Courtyard',
       category: 'Architecture',
       url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=85',
-      location: 'Cannes, France'
+      location: 'Tangalle, Sri Lanka'
     }
   ];
 

@@ -1,7 +1,7 @@
 import NotFoundPage from '@/views/NotFoundPage';
 
 export const metadata = {
-  title: 'Page Not Found | Alexander Sterling Photography',
+  title: 'Page Not Found | Kasun Senanayake Photography Sri Lanka',
   description: 'The requested page could not be found.',
 };
 

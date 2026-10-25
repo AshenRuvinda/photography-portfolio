@@ -3,15 +3,16 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Award, Check, MapPin, Eye, Camera, Heart, BookOpen } from 'lucide-react';
+import profile from '@/data/profile.json';
 
 function AboutPage() {
   const [activeTab, setActiveTab] = useState('story');
 
   const stats = [
-    { number: '15+', label: 'Years of Artistry' },
-    { number: '500+', label: 'Weddings & Sessions' },
-    { number: '28', label: 'Global Destinations' },
-    { number: '14', label: 'Industry Honors' },
+    { number: profile.brand.experienceYears, label: 'Years of Artistry' },
+    { number: profile.brand.completedSessions, label: 'Weddings & Sessions' },
+    { number: profile.brand.destinationsCount, label: 'Island Destinations' },
+    { number: profile.brand.industryHonors, label: 'Industry Honors' },
   ];
 
   return (
@@ -23,11 +24,11 @@ function AboutPage() {
             About The Artist
           </p>
           <h1 className="heading-serif text-4xl lg:text-6xl font-bold text-[#2E2219] mb-4">
-            Alexander Sterling
+            {profile.brand.name}
           </h1>
           <div className="gold-line" />
           <p className="text-[#5E4D3E] text-base lg:text-lg max-w-2xl mx-auto font-light">
-            Blending timeless editorial aesthetics with intimate, spontaneous storytelling.
+            Blending timeless editorial aesthetics with intimate, spontaneous storytelling across {profile.brand.country}.
           </p>
         </div>
       </section>
@@ -39,13 +40,13 @@ function AboutPage() {
             <div className="aspect-[4/5] rounded-[2px] overflow-hidden border border-[#CCBEB1] shadow-2xl bg-[#E7DDD3]">
               <img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-                alt="Alexander Sterling Portrait"
+                alt={`${profile.brand.name} Portrait`}
                 className="w-full h-full object-cover filter contrast-[1.02]"
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-[#F8F2EB] border border-[#CCBEB1] p-6 shadow-xl hidden sm:block max-w-xs">
-              <p className="heading-serif text-lg font-bold text-[#2E2219]">"Every moment holds timeless beauty."</p>
-              <p className="text-xs text-[#997E67] uppercase tracking-wider mt-1">— Alexander S.</p>
+              <p className="heading-serif text-lg font-bold text-[#2E2219]">"{profile.bio.quote}"</p>
+              <p className="text-xs text-[#997E67] uppercase tracking-wider mt-1">— {profile.brand.shortName}</p>
             </div>
           </div>
 
@@ -86,17 +87,17 @@ function AboutPage() {
             {activeTab === 'story' && (
               <div className="space-y-4 animate-fadeInUp">
                 <h3 className="heading-serif text-3xl font-bold text-[#2E2219]">
-                  Fifteen Years of Passion & Visual Storytelling
+                  Twelve Years of Preserving Sri Lankan Love Stories
                 </h3>
                 <p className="text-[#5E4D3E] leading-relaxed text-sm lg:text-base">
-                  What started as a childhood fascination with darkroom prints evolved into an international career photographing extraordinary couples, luxury properties, and milestone celebrations.
+                  Growing up surrounded by the rich colors, heritage architecture, and vibrant traditions of Sri Lanka, I found my calling in photography capturing the subtle expressions that make each wedding unique.
                 </p>
                 <p className="text-[#5E4D3E] leading-relaxed text-sm lg:text-base">
-                  Based between New York and destination wedding venues worldwide, my mission is to capture authentic romance with artistic composition and luminous natural tones.
+                  Based in Colombo and traveling regularly to Kandy, Galle, Bentota, and the central highlands, my focus is documenting sacred customs and modern celebrations with warm, natural tones.
                 </p>
                 <div className="pt-2 flex items-center gap-2 text-sm text-[#997E67]">
                   <MapPin className="w-4 h-4" />
-                  <span>Available for assignments worldwide</span>
+                  <span>Based in Colombo 07 • Available Islandwide & Worldwide</span>
                 </div>
               </div>
             )}

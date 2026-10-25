@@ -1,16 +1,18 @@
 [
-    {
-      "id": 1,
-      "name": "Jane Doe",
-      "photo": "/assets/testimonials/jane.jpg",
-      "rating": 5,
-      "quote": "Absolutely stunning photos! Captured our wedding perfectly."
-    },
-    {
-      "id": 2,
-      "name": "John Smith",
-      "photo": "/assets/testimonials/john.jpg",
-      "rating": 4,
-      "quote": "Professional and creative. Loved the portrait session!"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Kavindi & Dinuka",
+    "name": "Kavindi & Dinuka Jayawardena",
+    "photo": "/assets/testimonials/jane.jpg",
+    "rating": 5,
+    "quote": "Kasun captured our traditional Poruwa ceremony at Cinnamon Grand with so much elegance. Every emotional moment with our parents was beautifully preserved!"
+  },
+  {
+    "id": 2,
+    "title": "Sachini & Roshan",
+    "name": "Sachini & Roshan Silva",
+    "photo": "/assets/testimonials/john.jpg",
+    "rating": 5,
+    "quote": "Our destination pre-shoot in Galle Fort was completely effortless and relaxed. Kasun has a wonderful eye for natural light and genuine laughs."
+  }
+]

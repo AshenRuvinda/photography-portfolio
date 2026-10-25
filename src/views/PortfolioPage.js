@@ -13,56 +13,56 @@ function PortfolioPage() {
   const portfolioItems = [
     {
       id: 1,
-      title: 'Romantic Sunset Ceremony',
+      title: 'Kandyan Poruwa Vows & Rituals',
       category: 'Weddings',
       image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80',
-      description: 'Luminous coastal vows captured during gentle golden hour.',
-      location: 'Amalfi Coast, Italy',
+      description: 'Sacred chanting and family blessings during an auspicious dawn Poruwa ceremony.',
+      location: 'Kandy, Sri Lanka',
       year: '2024'
     },
     {
       id: 2,
-      title: 'Monochrome Editorial Study',
+      title: 'Monochrome Osariya Portrait Study',
       category: 'Portraits',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80',
-      description: 'Studio exploration of fine shadows, natural skin texture, and gaze.',
-      location: 'SoHo, New York',
+      description: 'Studio exploration of heritage handloom textures, jewelry, and serene gaze.',
+      location: 'Colombo 07, Sri Lanka',
       year: '2024'
     },
     {
       id: 3,
-      title: 'Grand Villa Estate Nuptials',
+      title: 'Sunset Ramparts Nuptials',
       category: 'Weddings',
       image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1000&q=80',
-      description: 'Classical architecture framing heartfelt family reunions and celebrations.',
-      location: 'Lake Como, Italy',
+      description: 'Golden hour portraits against the historic Dutch fort ramparts and ocean breeze.',
+      location: 'Galle Fort, Sri Lanka',
       year: '2024'
     },
     {
       id: 4,
-      title: 'Modern Minimalist Architecture',
+      title: 'Bawa Inspired Tropical Architecture',
       category: 'Architecture',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80',
-      description: 'Geometric symmetry, daylight transitions, and organic materials.',
-      location: 'Kyoto, Japan',
+      description: 'Courtyards, daylight reflection pools, and seamless indoor-outdoor tropical minimalism.',
+      location: 'Bentota, Sri Lanka',
       year: '2023'
     },
     {
       id: 5,
-      title: 'Intimate Candlelit Dinner',
+      title: 'Grand Ballroom Homecoming Celebration',
       category: 'Events',
       image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80',
-      description: 'Atmospheric banquet illumination celebrating milestone anniversaries.',
-      location: 'Paris, France',
+      description: 'Warm celebratory evening bringing extended families together in joyful dance.',
+      location: 'Colombo, Sri Lanka',
       year: '2023'
     },
     {
       id: 6,
-      title: 'Authentic Mountain Couple Story',
+      title: 'Ella Tea Estate Pre-Shoot Adventure',
       category: 'Weddings',
       image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=80',
-      description: 'Breathtaking open ridge elopement with untamed natural backdrop.',
-      location: 'Swiss Alps',
+      description: 'Misty mountain ridgeline portraits with sweeping views over the southern plains.',
+      location: 'Ella, Sri Lanka',
       year: '2024'
     },
   ];

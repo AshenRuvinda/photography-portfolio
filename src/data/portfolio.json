@@ -1,23 +1,23 @@
 [
-    {
-      "id": 1,
-      "title": "Sunset Wedding",
-      "category": "Weddings",
-      "image": "/assets/portfolio/wedding1.jpg",
-      "description": "A romantic sunset wedding shoot."
-    },
-    {
-      "id": 2,
-      "title": "Mountain Portrait",
-      "category": "Portraits",
-      "image": "/assets/portfolio/portrait1.jpg",
-      "description": "A dramatic portrait in the mountains."
-    },
-    {
-      "id": 3,
-      "title": "Cityscape",
-      "category": "Landscapes",
-      "image": "/assets/portfolio/landscape1.jpg",
-      "description": "Vibrant city lights at dusk."
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Bentota Coastal Sunset Wedding",
+    "category": "Weddings",
+    "image": "/assets/portfolio/wedding1.jpg",
+    "description": "A heartfelt beachside sunset ceremony along the southern coast."
+  },
+  {
+    "id": 2,
+    "title": "Ella Hill Country Portrait",
+    "category": "Portraits",
+    "image": "/assets/portfolio/portrait1.jpg",
+    "description": "Misty morning mountain light in the tea hills of Ella."
+  },
+  {
+    "id": 3,
+    "title": "Galle Fort Colonial Architecture",
+    "category": "Landscapes",
+    "image": "/assets/portfolio/landscape1.jpg",
+    "description": "Cobblestone streets and heritage facades at golden hour."
+  }
+]

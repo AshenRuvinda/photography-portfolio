@@ -1,0 +1,46 @@
+{
+  "brand": {
+    "name": "Kasun Senanayake",
+    "shortName": "Kasun S.",
+    "profession": "Photography",
+    "tagline": "Capturing Timeless Stories Across Sri Lanka & Beyond",
+    "country": "Sri Lanka",
+    "establishedYear": 2012,
+    "experienceYears": "12+",
+    "completedSessions": "450+",
+    "destinationsCount": "25+",
+    "industryHonors": "14"
+  },
+  "contact": {
+    "email": "hello@kasunsenanayake.lk",
+    "phone": "+94 77 123 4567",
+    "phoneRaw": "+94771234567",
+    "address": {
+      "street": "42 Horton Place",
+      "city": "Colombo 07",
+      "country": "Sri Lanka",
+      "formatted": "42 Horton Place, Colombo 07, Sri Lanka",
+      "shortLocation": "Colombo 07 & Islandwide, Sri Lanka"
+    },
+    "studioHours": {
+      "weekdays": "Monday - Saturday: 9AM - 6PM",
+      "weekends": "Sunday: By Appointment"
+    }
+  },
+  "social": {
+    "instagram": "https://instagram.com/kasunsenanayakephoto",
+    "facebook": "https://facebook.com/kasunsenanayakephoto",
+    "whatsapp": "https://wa.me/94771234567"
+  },
+  "bio": {
+    "short": "Creating timeless visual stories with elegance, emotion, and cultural authenticity.",
+    "intro": "Growing up surrounded by the rich colors, heritage architecture, and vibrant traditions of Sri Lanka, I found my calling in photography capturing the subtle expressions that make each wedding unique.",
+    "philosophy": "Photography is not just about capturing moments—it's about preserving emotions, telling stories, and creating art that transcends time.",
+    "quote": "Every culture, ceremony, and smile holds timeless soul."
+  },
+  "currency": {
+    "code": "LKR",
+    "symbol": "Rs.",
+    "prefix": "LKR "
+  }
+}

@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Instagram, Facebook, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import profile from '@/data/profile.json';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,13 +14,13 @@ function Footer() {
           {/* Brand Column */}
           <div className="space-y-4">
             <h3 className="heading-serif text-2xl font-bold tracking-tight text-[#2E2219]">
-              Alexander Sterling
+              {profile.brand.name}
             </h3>
             <p className="text-[#997E67] text-xs uppercase tracking-[0.2em] font-semibold">
-              Fine Art & Portrait Photography
+              {profile.brand.profession} • {profile.brand.country}
             </p>
             <p className="text-sm text-[#5E4D3E] leading-relaxed pt-2">
-              Creating timeless visual stories with elegance, emotion, and subtle artistic nuance. Available worldwide for bespoke assignments.
+              {profile.bio.short} Available across Colombo, Kandy, Galle, and destination assignments worldwide.
             </p>
           </div>
 
@@ -46,12 +47,12 @@ function Footer() {
               </li>
               <li>
                 <Link href="/services" className="text-[#5E4D3E] hover:text-[#997E67] transition-colors">
-                  Services & Packages
+                  Packages & Pricing
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="text-[#5E4D3E] hover:text-[#997E67] transition-colors">
-                  About Alexander
+                  About {profile.brand.name.split(' ')[0]}
                 </Link>
               </li>
             </ul>
@@ -63,11 +64,11 @@ function Footer() {
               Specialties
             </h4>
             <ul className="space-y-2.5 text-sm text-[#5E4D3E]">
-              <li>Wedding Ceremonies & Receptions</li>
-              <li>Editorial & Fine Art Portraits</li>
-              <li>Destination Couples & Elopements</li>
-              <li>Events & Brand Storytelling</li>
-              <li>Architectural & Villa Photography</li>
+              <li>Poruwa & Traditional Kandyan Weddings</li>
+              <li>Church & Western Wedding Ceremonies</li>
+              <li>Destination Pre-Shoots (Galle, Ella, Mirissa)</li>
+              <li>Homecoming & Engagement Celebrations</li>
+              <li>Boutique Villa & Luxury Resort Photography</li>
             </ul>
           </div>
 
@@ -79,19 +80,19 @@ function Footer() {
             <div className="space-y-2.5 text-sm text-[#5E4D3E]">
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[#997E67]" />
-                <a href="mailto:hello@alexandersterling.com" className="hover:text-[#997E67]">
-                  hello@alexandersterling.com
+                <a href={`mailto:${profile.contact.email}`} className="hover:text-[#997E67]">
+                  {profile.contact.email}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#997E67]" />
-                <a href="tel:+15551234567" className="hover:text-[#997E67]">
-                  +1 (555) 123-4567
+                <a href={`tel:${profile.contact.phoneRaw}`} className="hover:text-[#997E67]">
+                  {profile.contact.phone}
                 </a>
               </div>
               <div className="flex items-center gap-2.5">
                 <MapPin className="w-4 h-4 text-[#997E67]" />
-                <span>New York & Worldwide</span>
+                <span>{profile.contact.address.shortLocation}</span>
               </div>
             </div>
 
@@ -108,7 +109,7 @@ function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-[#CCBEB1]/70 flex flex-col sm:flex-row items-center justify-between text-xs text-[#82705F] gap-4">
-          <p>© {currentYear} Alexander Sterling Photography. All rights reserved.</p>
+          <p>© {currentYear} {profile.brand.name} Photography. All rights reserved. {profile.brand.country}.</p>
           <div className="flex items-center gap-6">
             <Link href="/contact" className="hover:text-[#997E67]">
               Privacy Policy

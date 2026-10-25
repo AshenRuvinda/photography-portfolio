@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Calendar, Clock, CheckCircle2 } from 'lucide-react';
+import profile from '@/data/profile.json';
 
 function ContactPage() {
   const [formData, setFormData] = useState({
@@ -44,11 +45,11 @@ function ContactPage() {
             Inquiries & Booking
           </p>
           <h1 className="heading-serif text-4xl lg:text-6xl font-bold text-[#2E2219] mb-4">
-            Connect With Alexander
+            Connect With {profile.brand.name.split(' ')[0]}
           </h1>
           <div className="gold-line" />
           <p className="text-[#5E4D3E] text-base lg:text-lg max-w-2xl mx-auto font-light">
-            Share the details of your upcoming wedding, portrait commission, or special project.
+            Share the details of your upcoming wedding, Poruwa ceremony, or destination pre-shoot.
           </p>
         </div>
       </section>
@@ -64,7 +65,7 @@ function ContactPage() {
               </h2>
               <div className="gold-line-left mb-4" />
               <p className="text-sm text-[#5E4D3E] leading-relaxed">
-                I limit my calendar to a select number of weddings and commissions each year to ensure uncompromising dedication and artistry for each client.
+                I accept a limited number of weddings and destination assignments each year to dedicate full attention and care to every celebration.
               </p>
             </div>
 
@@ -75,9 +76,9 @@ function ContactPage() {
                   <h4 className="text-xs uppercase tracking-wider font-semibold text-[#997E67]">
                     Email Inquiries
                   </h4>
-                  <p className="text-sm text-[#2E2219] font-medium mt-0.5">
-                    hello@alexandersterling.com
-                  </p>
+                  <a href={`mailto:${profile.contact.email}`} className="text-sm text-[#2E2219] font-medium mt-0.5 hover:text-[#997E67] block">
+                    {profile.contact.email}
+                  </a>
                 </div>
               </div>
 
@@ -87,9 +88,9 @@ function ContactPage() {
                   <h4 className="text-xs uppercase tracking-wider font-semibold text-[#997E67]">
                     Phone & WhatsApp
                   </h4>
-                  <p className="text-sm text-[#2E2219] font-medium mt-0.5">
-                    +1 (555) 123-4567
-                  </p>
+                  <a href={`tel:${profile.contact.phoneRaw}`} className="text-sm text-[#2E2219] font-medium mt-0.5 hover:text-[#997E67] block">
+                    {profile.contact.phone}
+                  </a>
                 </div>
               </div>
 
@@ -97,10 +98,10 @@ function ContactPage() {
                 <MapPin className="w-5 h-5 text-[#997E67] mt-0.5" />
                 <div>
                   <h4 className="text-xs uppercase tracking-wider font-semibold text-[#997E67]">
-                    Location & Travel
+                    Studio & Coverage
                   </h4>
                   <p className="text-sm text-[#2E2219] font-medium mt-0.5">
-                    Studio in SoHo, New York. Regular travel across Europe, Sri Lanka, & Asia.
+                    Studio at {profile.contact.address.formatted}. Available islandwide (Kandy, Galle, Bentota, Nuwara Eliya) & worldwide.
                   </p>
                 </div>
               </div>

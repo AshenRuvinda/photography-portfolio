@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import profile from '@/data/profile.json';
 
 function WhatsAppIcon({ className = "w-6 h-6" }) {
   return (
@@ -18,8 +19,8 @@ function WhatsAppIcon({ className = "w-6 h-6" }) {
 }
 
 export default function FloatingWhatsApp({ 
-  phoneNumber = "+15551234567",
-  message = "Hello Alexander, I would like to inquire about a photography booking." 
+  phoneNumber = profile.contact.phoneRaw,
+  message = `Hello ${profile.brand.name}, I would like to inquire about a photography booking in Sri Lanka.` 
 }) {
   const [isOpen, setIsOpen] = useState(false);
 

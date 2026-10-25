@@ -2,47 +2,48 @@
 
 import Link from 'next/link';
 import { Camera, Heart, Award, ArrowRight, Eye, ChevronDown, CheckCircle2 } from 'lucide-react';
+import profile from '@/data/profile.json';
 
 function HomePage() {
   const services = [
     {
-      title: 'Wedding Photography',
-      description: 'Timeless moments from your most precious day, documented with warmth and cinematic beauty.',
+      title: 'Poruwa & Traditional Weddings',
+      description: 'Sacred Kandyan and low-country Poruwa ceremonies, customs, and emotional family moments documented with reverence.',
       image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
       tag: 'Weddings',
       href: '/portfolio'
     },
     {
-      title: 'Portrait & Lifestyle',
-      description: 'Authentic portraits capturing genuine emotion, natural light, and individual soul.',
+      title: 'Destination Couples & Pre-Shoots',
+      description: 'Cinematic romantic sessions amidst Galle Fort ramparts, Ella tea estates, and secluded southern beaches.',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
       tag: 'Portraits',
       href: '/portfolio'
     },
     {
-      title: 'Events & Celebrations',
-      description: 'Intimate gatherings, milestone birthdays, and exclusive corporate occasions captured seamlessly.',
+      title: 'Church Weddings & Receptions',
+      description: 'Elegant Christian ceremonies, grand ballroom receptions, and vibrant homecoming celebrations.',
       image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
-      tag: 'Events',
+      tag: 'Celebrations',
       href: '/services'
     },
     {
-      title: 'Brand & Commercial',
-      description: 'High-concept creative visuals designed to elevate luxury brands and modern artisans.',
+      title: 'Editorial & Traditional Attire',
+      description: 'Showcasing intricate Osariya craftsmanship, bridal jewelry, and bespoke high-fashion portraiture.',
       image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80',
-      tag: 'Commercial',
+      tag: 'Editorial',
       href: '/services'
     },
     {
-      title: 'Villa & Real Estate',
-      description: 'Architectural perspectives highlighting luxury spaces, light transitions, and natural geometry.',
+      title: 'Boutique Villas & Estates',
+      description: 'Architectural perspectives of colonial heritage villas, Geoffrey Bawa architecture, and coastal resorts.',
       image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
       tag: 'Architecture',
       href: '/gallery'
     },
     {
-      title: 'Fine Art Prints',
-      description: 'Curated limited edition prints for interior collectors, homes, and private galleries.',
+      title: 'Heritage Fine Art Prints',
+      description: 'Curated limited edition prints capturing misty hill country landscapes and untamed tropical shores.',
       image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
       tag: 'Exhibition',
       href: '/gallery'
@@ -51,23 +52,23 @@ function HomePage() {
 
   const featuredWorks = [
     {
-      title: 'Serenade at Lake Como',
+      title: 'Twilight Vows in Galle Fort',
       category: 'Destination Wedding',
       image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80',
     },
     {
-      title: 'Golden Hour in Tuscany',
-      category: 'Elopement Story',
+      title: 'Golden Hour Across Ella Peaks',
+      category: 'Pre-Shoot Story',
       image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80',
     },
     {
-      title: 'Elegance in Monochromatic Light',
-      category: 'Fine Art Portrait',
+      title: 'Grace in Monochromatic Kandyan Silk',
+      category: 'Fine Art Bridal Portrait',
       image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=800&q=80',
     },
     {
-      title: 'The Coastal Villa Residency',
-      category: 'Architectural Lifestyle',
+      title: 'Bentota Coastal Villa Nuptials',
+      category: 'Southern Coast Celebration',
       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
     }
   ];
@@ -91,14 +92,14 @@ function HomePage() {
         {/* Content */}
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20 pb-16">
           <p className="text-[#FFDBBB] text-[0.65rem] sm:text-xs font-medium tracking-[0.22em] sm:tracking-[0.25em] uppercase mb-4 animate-fadeInUp">
-            Premier Fine Art & Wedding Photography
+            Fine Art Wedding & Portrait Photography • Sri Lanka
           </p>
           <h1 className="heading-serif text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.15] mb-5 sm:mb-6 animate-fadeInUp">
             Capturing Moments<br />
             <span className="italic font-light text-[#FFDBBB]">That Last Forever</span>
           </h1>
           <p className="text-[#E7DDD3] text-sm sm:text-base lg:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed font-light px-2">
-            Professional photography that tells your unique story with elegance, genuine emotion, and timeless cinematic artistry.
+            Preserving Sri Lankan love stories, vibrant cultural traditions, and raw genuine emotion with timeless elegance.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center px-4">
             <Link href="/portfolio" className="btn-gold w-full sm:w-auto text-xs py-3 px-7">
@@ -130,7 +131,7 @@ function HomePage() {
           </h2>
           <div className="gold-line" />
           <p className="text-[#5E4D3E] text-base max-w-xl mx-auto">
-            From intimate ceremonies to grand editorial projects, every frame is crafted to perfection.
+            From auspicious Poruwa ceremonies in Colombo & Kandy to beachside vows in the southern coast.
           </p>
         </div>
 
@@ -229,7 +230,7 @@ function HomePage() {
             <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-[2px] border border-[#CCBEB1] shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
-                alt="Alexander Sterling Photographer"
+                alt="Kasun Senanayake Photographer"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -246,25 +247,25 @@ function HomePage() {
             </h2>
             <div className="gold-line-left" />
             <p className="text-[#5E4D3E] text-base leading-relaxed">
-              With over 15 years capturing weddings, editorial portraits, and authentic human connections across the globe, my approach blends documentarian honesty with high-fashion sophistication.
+              With over 12 years capturing Poruwa celebrations, destination weddings, and authentic human connections across Sri Lanka and overseas, my approach blends photojournalistic honesty with high-fashion sophistication.
             </p>
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3 text-sm text-[#2E2219]">
                 <CheckCircle2 className="w-5 h-5 text-[#997E67]" />
-                <span>Over 500+ couples & families photographed worldwide</span>
+                <span>Over 450+ Sri Lankan couples & families photographed islandwide</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-[#2E2219]">
                 <CheckCircle2 className="w-5 h-5 text-[#997E67]" />
-                <span>Published in international wedding & editorial publications</span>
+                <span>Deep appreciation for Kandyan, Low-Country, and multicultural traditions</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-[#2E2219]">
                 <CheckCircle2 className="w-5 h-5 text-[#997E67]" />
-                <span>Natural light specialists with bespoke heirloom retouching</span>
+                <span>Warm natural tones with signature handcrafted heirloom retouching</span>
               </div>
             </div>
             <div className="pt-4">
               <Link href="/about" className="btn-gold">
-                Learn More About Alexander
+                Learn More About {profile.brand.name.split(' ')[0]}
               </Link>
             </div>
           </div>

@@ -1,20 +1,20 @@
 [
-    {
-      "id": 1,
-      "title": "Wedding Photography",
-      "description": "Full-day coverage with high-resolution images and an online gallery.",
-      "price": "$2000"
-    },
-    {
-      "id": 2,
-      "title": "Portrait Session",
-      "description": "1-hour session with 20 edited photos.",
-      "price": "$300"
-    },
-    {
-      "id": 3,
-      "title": "Event Photography",
-      "description": "Capture your special events with candid and posed shots.",
-      "price": "$500"
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Poruwa & Traditional Wedding Photography",
+    "description": "Full-day coverage of Poruwa ceremonies, church weddings, and grand receptions with high-resolution images.",
+    "price": "LKR 380,000"
+  },
+  {
+    "id": 2,
+    "title": "Destination Pre-Shoot & Portraits",
+    "description": "Half-day cinematic couples session in Galle Fort, Ella peaks, or Mirissa coast with 35 curated edited photos.",
+    "price": "LKR 125,000"
+  },
+  {
+    "id": 3,
+    "title": "Events & Celebrations",
+    "description": "Engagements, homecoming celebrations, birthday milestones, and corporate galas in Colombo & Kandy.",
+    "price": "LKR 95,000"
+  }
+]

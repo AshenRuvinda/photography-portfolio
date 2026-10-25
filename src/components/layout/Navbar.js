@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import profile from '@/data/profile.json';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,10 +46,10 @@ function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex flex-col group min-w-0 pr-2">
               <span className="heading-serif text-lg sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#2E2219] group-hover:text-[#997E67] transition-colors duration-300 truncate leading-tight">
-                Alexander Sterling
+                {profile.brand.name}
               </span>
               <span className="text-[0.55rem] sm:text-[0.65rem] tracking-[0.22em] sm:tracking-[0.28em] uppercase text-[#997E67] font-medium leading-none mt-0.5">
-                Photography Studio
+                {profile.brand.profession} • {profile.brand.country}
               </span>
             </Link>
 

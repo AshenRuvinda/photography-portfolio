@@ -1,8 +1,8 @@
 import ServicesPage from '@/views/ServicesPage';
 
 export const metadata = {
-  title: 'Services | Alexander Sterling Photography',
-  description: 'Bespoke photography services including portrait sessions, wedding photography, and fine art prints.',
+  title: 'Packages & Services | Kasun Senanayake Photography Sri Lanka',
+  description: 'Bespoke photography packages for Poruwa ceremonies, church weddings, and destination portrait sessions in Sri Lanka.',
 };
 
 export default function Page() {

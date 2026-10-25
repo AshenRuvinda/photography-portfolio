@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Send, User, Mail, MessageSquare, CheckCircle, AlertCircle, MapPin, Phone, Clock, Camera, Award, Aperture } from 'lucide-react';
+import profile from '@/data/profile.json';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -122,19 +123,19 @@ function ContactForm() {
     {
       icon: MapPin,
       title: 'Studio Location',
-      details: ['123 Photography Street', 'Creative District, New York 10001'],
+      details: [profile.contact.address.street, `${profile.contact.address.city}, ${profile.contact.address.country}`],
       color: 'text-amber-600'
     },
     {
       icon: Phone,
       title: 'Get In Touch',
-      details: ['+1 (555) 123-4567', 'hello@alexandersterling.com'],
+      details: [profile.contact.phone, profile.contact.email],
       color: 'text-stone-600'
     },
     {
       icon: Clock,
       title: 'Studio Hours',
-      details: ['Monday - Friday: 9AM - 6PM', 'Saturday: 10AM - 4PM'],
+      details: [profile.contact.studioHours.weekdays, profile.contact.studioHours.weekends],
       color: 'text-stone-500'
     }
   ];
@@ -249,7 +250,7 @@ function ContactForm() {
                   telling stories, and creating art that transcends time."
                 </blockquote>
                 <cite className="text-sm text-amber-600 font-light tracking-wider uppercase">
-                  — Alexander Sterling
+                  — Kasun Senanayake
                 </cite>
               </div>
             </div>

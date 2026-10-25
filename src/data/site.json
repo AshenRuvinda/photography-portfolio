@@ -1,13 +1,13 @@
 {
-    "name": "Your Name",
-    "tagline": "Capturing Moments, Creating Memories",
-    "heroImage": "/assets/hero.jpg",
-    "profileImage": "/assets/profile.jpg",
-    "bio": "I am a passionate photographer with over 10 years of experience capturing life's most precious moments. My style blends natural light with creative composition to tell unique stories through every frame.",
-    "style": "My photography focuses on candid, emotive shots with a warm, timeless aesthetic.",
-    "socialLinks": {
-      "instagram": "https://instagram.com/yourusername",
-      "twitter": "https://twitter.com/yourusername",
-      "email": "mailto:your.email@example.com"
-    }
+  "name": "Kasun Senanayake",
+  "tagline": "Capturing Timeless Stories Across Sri Lanka & Beyond",
+  "heroImage": "/assets/hero.jpg",
+  "profileImage": "/assets/profile.jpg",
+  "bio": "I am a dedicated fine art and wedding photographer with over 12 years of experience documenting intimate love stories, cultural celebrations, and evocative portraits across Colombo, Kandy, Galle, and the hill country of Sri Lanka.",
+  "style": "My photography blends warm natural light, candid emotions, and an editorial touch rooted in timeless aesthetics.",
+  "socialLinks": {
+    "instagram": "https://instagram.com/kasunsenanayakephoto",
+    "facebook": "https://facebook.com/kasunsenanayakephoto",
+    "email": "mailto:hello@kasunsenanayake.lk"
   }
+}
